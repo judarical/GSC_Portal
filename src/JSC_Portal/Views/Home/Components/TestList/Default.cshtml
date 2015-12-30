@@ -1,0 +1,9 @@
+﻿@model IEnumerable<JSC_Portal.Models.TestModel>
+
+<h3>Strength Heroes</h3>
+<ul>
+    @foreach (var p in Model)
+    {
+        <li>@p.Name</li>
+    }
+</ul>  
