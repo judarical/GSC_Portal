@@ -24,7 +24,11 @@
   },
 
   "frameworks": {
-    "dnx451": { },
+    "dnx451": {
+      "dependencies": {
+        "Globsite.Globalization.Mvc": "1.1.1"
+      }
+    },
     "dnxcore50": { }
   },
 
