@@ -1,9 +1,10 @@
 {
-  "version": "1.0.0-*",
+  "commands": {
+    "web": "Microsoft.AspNet.Server.Kestrel"
+  },
   "compilationOptions": {
     "emitEntryPoint": true
   },
-
   "dependencies": {
     "Microsoft.AspNet.IISPlatformHandler": "1.0.0-rc1-final",
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
@@ -16,28 +17,24 @@
     "Microsoft.Extensions.Configuration.UserSecrets": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Console": "1.0.0-rc1-final",
     "Microsoft.Extensions.Logging.Debug": "1.0.0-rc1-final",
-    "Microsoft.AspNet.Identity": "3.0.0-rc1-final"
-  },    
-
-  "commands": {
-    "web": "Microsoft.AspNet.Server.Kestrel"
+    "Microsoft.AspNet.Identity": "3.0.0-rc1-final",
+    "Microsoft.AspNet.Localization": "1.0.0-rc1-final"
   },
-
-  "frameworks": {
-    "dnx451": {
-      "dependencies": {
-        "Globsite.Globalization.Mvc": "1.1.1"
-      }
-    },
-    "dnxcore50": { }
-  },
-
   "exclude": [
     "wwwroot",
     "node_modules"
   ],
+  "frameworks": {
+    "dnx451": {
+      "dependencies": {
+      }
+    },
+    "dnxcore50": { }
+  },
   "publishExclude": [
     "**.user",
     "**.vspscc"
-  ]
+  ],
+  "resource": "Resources/ComponentResources",
+  "version": "1.0.0-*"
 }

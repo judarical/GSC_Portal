@@ -6,6 +6,8 @@ using Microsoft.AspNet.Mvc;
 using JSC_Portal.Models;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Http.Features;
+using Microsoft.AspNet.Mvc.Localization;
+using JSC_Portal.Resources;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -13,6 +15,13 @@ namespace JSC_Portal.Controllers
 {
     public class HomeController : Controller
     {
+        // private readonly IHtmlLocalizer<ComponentResources> _localizer;
+
+        /*public HomeController(IHtmlLocalizer<ComponentResources> localizer)
+        {
+            this._localizer = localizer;
+        }*/
+
         // GET: /<controller>/
         public IActionResult Index()
         {

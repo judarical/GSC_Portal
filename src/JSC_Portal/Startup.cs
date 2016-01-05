@@ -10,6 +10,8 @@ using Microsoft.AspNet.Mvc;
 using JSC_Portal.Logic;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
+using Microsoft.AspNet.Localization;
+using System.Globalization;
 
 namespace JSC_Portal
 {
@@ -45,7 +47,7 @@ namespace JSC_Portal
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddApplicationInsightsTelemetry(Configuration);
-            services.AddMvc();
+            services.AddMvc().AddViewLocalization().AddDataAnnotationsLocalization();
             /*
             services.Configure<MvcOptions>(options =>
             {
@@ -109,6 +111,20 @@ namespace JSC_Portal
                     template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
+            var requestLocalizationOptions = new RequestLocalizationOptions
+            {
+                SupportedCultures = new List<CultureInfo>{
+                new CultureInfo("en-US"),
+                new CultureInfo("ru-RU")
+            },
+                SupportedUICultures = new List<CultureInfo>
+            {
+                new CultureInfo("en-US"),
+                new CultureInfo("ru-RU")
+            }
+            };
+            app.UseRequestLocalization(requestLocalizationOptions, new RequestCulture(new CultureInfo("en-US")));
         }
 
         // Entry point for the application.

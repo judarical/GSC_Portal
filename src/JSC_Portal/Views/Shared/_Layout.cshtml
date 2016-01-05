@@ -6,10 +6,13 @@
     <title>@ViewBag.Title</title>
     <link href="lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
 </head>
-<body>
-    @await Component.InvokeAsync("NavBar")
+<body>    
     <div>
-        @RenderBody()
+        @await Component.InvokeAsync("NavBar")
+        <div class="container">
+            @RenderBody()
+        </div>
+        @await Component.InvokeAsync("Footer")
     </div>
     <script src="lib/jquery/dist/jquery.js"></script>
     <script src="lib/bootstrap/dist/js/bootstrap.js"></script>

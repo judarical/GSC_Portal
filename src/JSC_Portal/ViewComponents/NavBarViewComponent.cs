@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JSC_Portal.ViewComponents
 {
-    public class NavBarComponent : ViewComponent
+    public class NavBarViewComponent : ViewComponent
     {
         public async Task<IViewComponentResult> InvokeAsync()
         {
@@ -27,14 +27,14 @@ namespace JSC_Portal.ViewComponents
             {
                 new NavBarModel
                 {
-                    Text = ComponentResources.SMainPage,
+                    Text = "Главная страница",//ComponentResources.SMainPage,
                     IsActive = true,
                     Url = "home",
                     Priority = 1
                 },
                 new NavBarModel
                 {
-                    Text = ComponentResources.SOnlineServices,
+                    Text = "Сервисы онлайн", // ComponentResources.SOnlineServices,
                     IsActive = false,
                     Url = "math",
                     Priority = 2
